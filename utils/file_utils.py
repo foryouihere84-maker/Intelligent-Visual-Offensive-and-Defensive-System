@@ -51,24 +51,26 @@ def get_detection_models():
     return scan_model_files(detection_model_dir, '.pt')
 
 
+
+
 def get_classification_models():
     """
     获取分类模型列表
-    :return: 模型名称列表
+    :return: 分类模型名称列表
     """
-    from flask import current_app
-    classification_model_dir = os.path.join(current_app.config['BASE_DIR'], 'models', 'classification')
-    return scan_model_files(classification_model_dir, '.pth')
+    # 返回常见的预训练分类模型
+    return [
+        'resnet18',
+        'resnet34', 
+        'resnet50',
+        'resnet101',
+        'resnet152',
+        'vgg16',
+        'vgg19',
+        'mobilenet_v2',
+        'efficientnet_b0'
+    ]
 
-
-def get_segmentation_models():
-    """
-    获取分割模型列表
-    :return: 模型名称列表
-    """
-    from flask import current_app
-    segmentation_model_dir = os.path.join(current_app.config['BASE_DIR'], 'models', 'segmentation')
-    return scan_model_files(segmentation_model_dir, '.pt')
 
 def get_adversarial_models():
     """

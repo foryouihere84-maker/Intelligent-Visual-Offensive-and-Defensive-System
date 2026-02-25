@@ -580,7 +580,7 @@
                 <div class="stat-label">使用模型</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">{{ "%.2f"|format((detections|map(attribute='confidence')|sum / detections|length) if detections else 0) }}</div>
+                <div class="stat-number">{{ "%.2f"|format(detections|map(attribute='confidence')|max if detections else 0) }}</div>
                 <div class="stat-label">最高置信度</div>
             </div>
         </div>

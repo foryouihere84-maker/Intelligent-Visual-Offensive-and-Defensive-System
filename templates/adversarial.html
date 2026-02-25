@@ -27,91 +27,90 @@
         }
 
         /* 快速模式开关样式 */
-.toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    margin: 0 10px;
-}
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin: 0 10px;
+        }
 
-.toggle-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 30px;
-}
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 30px;
+        }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 22px;
-    width: 22px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
 
-input:checked + .slider {
-    background-color: #1e4a6b;
-}
+        input:checked + .slider {
+            background-color: #1e4a6b;
+        }
 
-input:checked + .slider:before {
-    transform: translateX(30px);
-}
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
 
-.mode-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    background: rgba(30, 74, 107, 0.05);
-    border-radius: 0.75rem;
-    margin-top: 0.5rem;
-}
+        .mode-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: rgba(30, 74, 107, 0.05);
+            border-radius: 0.75rem;
+            margin-top: 0.5rem;
+        }
 
-.mode-text {
-    font-size: 0.9rem;
-    color: #475569;
-}
+        .mode-text {
+            font-size: 0.9rem;
+            color: #475569;
+        }
 
-.mode-status {
-    font-weight: 600;
-    color: #1e4a6b;
-}
+        .mode-status {
+            font-weight: 600;
+            color: #1e4a6b;
+        }
 
-/* 性能警告样式 */
-.performance-warning {
-    background: rgba(255, 152, 0, 0.15);
-    border: 1px solid rgba(255, 152, 0, 0.3);
-    border-radius: 0.75rem;
-    padding: 1rem;
-    margin: 1rem 0;
-    display: none;
-}
+        /* 性能警告样式 */
+        .performance-warning {
+            background: rgba(255, 152, 0, 0.15);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: none;
+        }
 
-.performance-warning.show {
-    display: block;
-}
+        .performance-warning.show {
+            display: block;
+        }
 
-.warning-icon {
-    color: #ff9800;
-    margin-right: 0.5rem;
-}
-
+        .warning-icon {
+            color: #ff9800;
+            margin-right: 0.5rem;
+        }
 
         /* 主容器 */
         .adversarial-container {
@@ -569,30 +568,29 @@ input:checked + .slider:before {
                     </select>
                 </div>
 
-            <!-- 快速模式切换 (新增功能) -->
-<div class="form-group" id="fast-mode-section" style="display: none;">
-    <label class="form-label">
-        <i class="fas fa-tachometer-alt"></i> 性能模式
-    </label>
-    <div class="mode-label">
-        <span class="mode-text">
-            <i class="fas fa-bolt warning-icon"></i>
-            启用快速模式可显著提升处理速度
-        </span>
-        <label class="toggle-switch">
-            <input type="checkbox" id="fast-mode-toggle" name="fast_mode" value="true">
-            <span class="slider"></span>
-        </label>
-    </div>
-    <div class="mode-status" id="mode-status">当前模式: 精确模式</div>
-</div>
+                <!-- 快速模式切换 -->
+                <div class="form-group" id="fast-mode-section" style="display: none;">
+                    <label class="form-label">
+                        <i class="fas fa-tachometer-alt"></i> 性能模式
+                    </label>
+                    <div class="mode-label">
+                        <span class="mode-text">
+                            <i class="fas fa-bolt warning-icon"></i>
+                            启用快速模式可显著提升处理速度
+                        </span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="fast-mode-toggle" name="fast_mode" value="true">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="mode-status" id="mode-status">当前模式: 精确模式</div>
+                </div>
 
-<!-- 性能警告提示 -->
-<div class="performance-warning" id="performance-warning">
-    <i class="fas fa-exclamation-triangle warning-icon"></i>
-    <strong>性能提示：</strong>官方算法需要较长时间计算，建议启用快速模式或使用较低强度值。
-</div>
-
+                <!-- 性能警告提示 -->
+                <div class="performance-warning" id="performance-warning">
+                    <i class="fas fa-exclamation-triangle warning-icon"></i>
+                    <strong>性能提示：</strong>官方算法需要较长时间计算，建议启用快速模式或使用较低强度值。
+                </div>
 
                 <!-- AdvCam 风格选择 (仅当选择官方 AdvCam 时显示) -->
                 <div class="form-group" id="style-selection" style="display: none;">
@@ -701,6 +699,35 @@ input:checked + .slider:before {
                             <span class="stat-badge warning">攻击类型: {{ attack_type.upper() }}</span>
                             <span class="stat-badge info">强度: {{ "%.2f"|format(intensity) }}</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 检测对比控制面板 -->
+                <div class="glass-card" style="margin-top: 2rem;">
+                    <h3 style="color: #1e4a6b; margin-bottom: 1.5rem; text-align: center;">
+                        <i class="fas fa-search" style="margin-right: 0.8rem;"></i>YOLO检测对比分析
+                    </h3>
+
+                    <div class="form-group" style="max-width: 400px; margin: 0 auto;">
+                        <label class="form-label" for="detection-model">
+                            <i class="fas fa-brain"></i> 选择检测模型
+                        </label>
+                        <select id="detection-model" class="model-select">
+                            {% for model in get_detection_models() %}
+                            <option value="{{ model }}">{{ model }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <button id="detect-compare-btn" class="submit-btn" style="width: auto; padding: 0.8rem 2rem;">
+                            <i class="fas fa-play-circle"></i> 开始检测对比
+                        </button>
+                    </div>
+
+                    <!-- 检测结果显示区域 -->
+                    <div id="detection-results" style="display: none; margin-top: 2rem;">
+                        <!-- 检测结果将通过JavaScript动态插入 -->
                     </div>
                 </div>
 
@@ -830,11 +857,22 @@ input:checked + .slider:before {
             }
         }
 
-        // 更新攻击选项显示
+        // 统一的攻击选项更新函数
         function updateAttackOptions() {
             const attackType = document.getElementById('attack-type').value;
+            const fastModeSection = document.getElementById('fast-mode-section');
             const styleSelection = document.getElementById('style-selection');
             const combinedParams = document.getElementById('combined-params');
+            const performanceWarning = document.getElementById('performance-warning');
+
+            // 控制快速模式显示
+            if (attackType.startsWith('official_')) {
+                fastModeSection.style.display = 'block';
+                performanceWarning.classList.add('show');
+            } else {
+                fastModeSection.style.display = 'none';
+                performanceWarning.classList.remove('show');
+            }
 
             // 控制风格选择显示
             if (attackType === 'official_cam') {
@@ -854,72 +892,22 @@ input:checked + .slider:before {
             updateIntensityLabel();
         }
 
+        // 快速模式切换
+        function toggleFastMode() {
+            const fastModeToggle = document.getElementById('fast-mode-toggle');
+            const modeStatus = document.getElementById('mode-status');
+
+            if (fastModeToggle.checked) {
+                modeStatus.innerHTML = '当前模式: <span style="color: #10b981; font-weight: 600;">快速模式</span>';
+            } else {
+                modeStatus.innerHTML = '当前模式: <span style="color: #3b82f6; font-weight: 600;">精确模式</span>';
+            }
+        }
+
         // 更新参数值显示
         function updateParamValue(elementId, value) {
             document.getElementById(elementId).textContent = parseFloat(value).toFixed(2);
         }
-
-        // 更新攻击选项显示（修改现有函数）
-function updateAttackOptions() {
-    const attackType = document.getElementById('attack-type').value;
-    const fastModeSection = document.getElementById('fast-mode-section');
-    const styleSelection = document.getElementById('style-selection');
-    const combinedParams = document.getElementById('combined-params');
-    const performanceWarning = document.getElementById('performance-warning');
-
-    // 控制快速模式显示
-    if (attackType.startsWith('official_')) {
-        fastModeSection.style.display = 'block';
-        performanceWarning.classList.add('show');
-    } else {
-        fastModeSection.style.display = 'none';
-        performanceWarning.classList.remove('show');
-    }
-
-    // 其他原有逻辑保持不变...
-    // 控制风格选择显示
-    if (attackType === 'official_cam') {
-        styleSelection.style.display = 'block';
-    } else {
-        styleSelection.style.display = 'none';
-    }
-
-    // 控制组合参数显示
-    if (attackType === 'official_combined' || attackType === 'combined') {
-        combinedParams.style.display = 'block';
-    } else {
-        combinedParams.style.display = 'none';
-    }
-
-    // 更新强度标签
-    updateIntensityLabel();
-}
-
-// 快速模式切换
-function toggleFastMode() {
-    const fastModeToggle = document.getElementById('fast-mode-toggle');
-    const modeStatus = document.getElementById('mode-status');
-    const loadingHint = document.getElementById('loading-hint');
-
-    if (fastModeToggle.checked) {
-        modeStatus.innerHTML = '当前模式: <span style="color: #10b981; font-weight: 600;">快速模式</span>';
-        if (loadingHint) {
-            loadingHint.textContent = '使用快速模式，预计处理时间: 5-15秒';
-        }
-    } else {
-        modeStatus.innerHTML = '当前模式: <span style="color: #3b82f6; font-weight: 600;">精确模式</span>';
-        if (loadingHint) {
-            loadingHint.textContent = '使用精确模式，预计处理时间: 30秒-2分钟';
-        }
-    }
-}
-
-// 在初始化部分添加事件监听器
-document.getElementById('fast-mode-toggle').addEventListener('change', toggleFastMode);
-
-// 在页面加载完成后初始化
-toggleFastMode(); // 初始化模式状态
-
 
         // 更新强度标签
         function updateIntensityLabel() {
@@ -943,10 +931,341 @@ toggleFastMode(); // 初始化模式状态
         // 初始化
         updateAttackOptions();
         updateIntensityLabel();
+        document.getElementById('fast-mode-toggle').addEventListener('change', toggleFastMode);
+        toggleFastMode();
+
+        // 检测对比功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const detectBtn = document.getElementById('detect-compare-btn');
+            const detectionResults = document.getElementById('detection-results');
+
+            if (detectBtn) {
+                detectBtn.addEventListener('click', async function() {
+                    const modelName = document.getElementById('detection-model').value;
+                    const originalImage = '{{ original_image }}';
+                    const adversarialImage = '{{ adversarial_image }}';
+
+                    // 显示加载状态
+                    detectBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 检测中...';
+                    detectBtn.disabled = true;
+
+                    try {
+                        const response = await fetch('/adversarial/detect_compare', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: `original_image=${encodeURIComponent(originalImage)}&adversarial_image=${encodeURIComponent(adversarialImage)}&model_name=${encodeURIComponent(modelName)}`
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            displayDetectionResults(result);
+                        } else {
+                            showError(result.error || '检测失败');
+                        }
+                    } catch (error) {
+                        showError('网络错误: ' + error.message);
+                    } finally {
+                        detectBtn.innerHTML = '<i class="fas fa-play-circle"></i> 开始检测对比';
+                        detectBtn.disabled = false;
+                    }
+                });
+            }
+        });
+
+        function displayDetectionResults(data) {
+            const container = document.getElementById('detection-results');
+
+            // 创建检测结果HTML
+            const html = `
+                <div class="result-grid">
+                    <div class="image-comparison">
+                        <div class="comparison-title">
+                            <i class="fas fa-check-circle"></i> 原始图像检测结果
+                        </div>
+                        <img src="/static/results/${data.original_result}" alt="原始图像检测" class="result-image">
+                        <div class="image-stats">
+                            <span class="stat-badge info">检测到 ${data.original_detections.length} 个目标</span>
+                        </div>
+                    </div>
+
+                    <div class="image-comparison">
+                        <div class="comparison-title">
+                            <i class="fas fa-exclamation-triangle"></i> 对抗样本检测结果
+                        </div>
+                        <img src="/static/results/${data.adversarial_result}" alt="对抗样本检测" class="result-image">
+                        <div class="image-stats">
+                            <span class="stat-badge warning">检测到 ${data.adversarial_detections.length} 个目标</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 详细分析 -->
+                <div class="params-details" style="margin-top: 2rem;">
+                    <h3><i class="fas fa-chart-bar" style="margin-right: 0.5rem;"></i>检测对比分析报告</h3>
+
+                    ${generateSummaryStats(data)}
+                    ${generateDetailedAnalysis(data)}
+                    ${generateVisualizationTips(data)}
+                </div>
+            `;
+
+            container.innerHTML = html;
+            container.style.display = 'block';
+        }
+
+        function generateSummaryStats(data) {
+            const comp = data.comparison;
+            return `
+                <div class="param-item">
+                    <span class="param-key">目标数量变化:</span>
+                    <span class="param-value">${analyzeObjectCountChange(data)}</span>
+                </div>
+
+                <div class="param-item">
+                    <span class="param-key">检测成功率:</span>
+                    <span class="param-value">${calculateDetectionSuccessRate(data)}</span>
+                </div>
+
+                <div class="param-item">
+                    <span class="param-key">平均置信度变化:</span>
+                    <span class="param-value">${analyzeAvgConfidenceChange(comp)}</span>
+                </div>
+
+                <div class="param-item">
+                    <span class="param-key">类别稳定性:</span>
+                    <span class="param-value">${analyzeClassStability(comp)}</span>
+                </div>
+            `;
+        }
+
+        function calculateDetectionSuccessRate(data) {
+    const origCount = data.original_detections.length;
+    // 使用改进后的匹配算法结果
+    const matchedCount = data.comparison.objects_matched || (origCount - data.comparison.objects_lost);
+    const successRate = origCount > 0 ? (matchedCount / origCount * 100).toFixed(1) : 0;
+
+    console.log(`Success Rate Debug: ${origCount} orig, ${matchedCount} matched = ${successRate}%`);
+
+    if (successRate >= 90) {
+        return `<span style="color: #10b981;">${successRate}% (优秀)</span>`;
+    } else if (successRate >= 70) {
+        return `<span style="color: #f59e0b;">${successRate}% (一般)</span>`;
+    } else {
+        return `<span style="color: #ef4444;">${successRate}% (较差)</span>`;
+    }
+}
+
+        function analyzeObjectCountChange(data) {
+    const origCount = data.original_detections.length;
+    const advCount = data.adversarial_detections.length;
+    const diff = advCount - origCount;
+
+    console.log(`Count Change Debug: ${origCount} → ${advCount}, diff: ${diff}`);
+
+    if (diff > 0) {
+        return `<span style="color: #ef4444;">增加 ${diff} 个 (${data.comparison.objects_added}个新增)</span>`;
+    } else if (diff < 0) {
+        return `<span style="color: #10b981;">减少 ${Math.abs(diff)} 个 (${data.comparison.objects_lost}个丢失)</span>`;
+    } else {
+        return `<span style="color: #3b82f6;">数量无变化</span>`;
+    }
+}
 
 
+        function analyzeAvgConfidenceChange(comp) {
+            const avgChange = comp.avg_confidence_change || 0;
+            const percentage = (avgChange * 100).toFixed(1);
+
+            if (avgChange > 0.1) {
+                return `<span style="color: #ef4444;">平均上升 ${percentage}% (置信度显著提高)</span>`;
+            } else if (avgChange > 0) {
+                return `<span style="color: #f59e0b;">平均上升 ${percentage}% (置信度轻微提高)</span>`;
+            } else if (avgChange < -0.1) {
+                return `<span style="color: #10b981;">平均下降 ${Math.abs(percentage)}% (置信度显著降低)</span>`;
+            } else if (avgChange < 0) {
+                return `<span style="color: #3b82f6;">平均下降 ${Math.abs(percentage)}% (置信度轻微降低)</span>`;
+            } else {
+                return `<span style="color: #6b7280;">无明显变化</span>`;
+            }
+        }
+
+        function analyzeClassStability(comp) {
+            const totalMatches = comp.detailed_matches ? comp.detailed_matches.length : 0;
+            const classChanges = comp.class_changes ? comp.class_changes.length : 0;
+
+            if (totalMatches === 0) {
+                return `<span style="color: #6b7280;">无匹配目标</span>`;
+            }
+
+            const stability = ((totalMatches - classChanges) / totalMatches * 100).toFixed(1);
+
+            if (stability >= 95) {
+                return `<span style="color: #10b981;">${stability}% (高度稳定)</span>`;
+            } else if (stability >= 80) {
+                return `<span style="color: #f59e0b;">${stability}% (基本稳定)</span>`;
+            } else {
+                return `<span style="color: #ef4444;">${stability}% (不稳定)</span>`;
+            }
+        }
 
 
+        function generateDetailedAnalysis(data) {
+            const comp = data.comparison;
+            let html = '<h4 style="margin-top: 1.5rem; color: #1e4a6b;"><i class="fas fa-list" style="margin-right: 0.5rem;"></i>详细分析</h4>';
+
+            // 目标丢失详情
+            if (comp.objects_lost > 0) {
+                html += `
+                <div class="param-item">
+                    <span class="param-key">目标丢失:</span>
+                    <span class="param-value" style="color: #ef4444;">${comp.objects_lost} 个目标未被检测到</span>
+                </div>`;
+            }
+
+            // 目标新增详情
+            if (comp.objects_added > 0) {
+                html += `
+                <div class="param-item">
+                    <span class="param-key">虚假检测:</span>
+                    <span class="param-value" style="color: #f59e0b;">新增 ${comp.objects_added} 个检测框</span>
+                </div>`;
+            }
+
+            // 置信度变化详情
+            if (comp.confidence_changes && comp.confidence_changes.length > 0) {
+                html += `
+                <div class="param-item">
+                    <span class="param-key">置信度变化详情:</span>
+                    <span class="param-value">${generateConfidenceTable(comp.confidence_changes)}</span>
+                </div>`;
+            }
+
+            // 类别变化详情
+            if (comp.class_changes && comp.class_changes.length > 0) {
+                html += `
+                <div class="param-item">
+                    <span class="param-key">类别误检详情:</span>
+                    <span class="param-value">${generateClassChangeTable(comp.class_changes)}</span>
+                </div>`;
+            }
+
+            // 位置变化详情
+            if (comp.position_changes && comp.position_changes.length > 0) {
+                html += `
+                <div class="param-item">
+                    <span class="param-key">位置偏移详情:</span>
+                    <span class="param-value">${generatePositionTable(comp.position_changes)}</span>
+                </div>`;
+            }
+
+            return html;
+        }
+
+        function generateConfidenceTable(changes) {
+            if (changes.length === 0) return '无置信度变化';
+
+            let tableHtml = '<table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">';
+            tableHtml += '<tr style="background: #f3f4f6;"><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">类别</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">原始置信度</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">对抗后置信度</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">变化幅度</th></tr>';
+
+            changes.forEach(change => {
+                const changePercent = (change.confidence_change * 100).toFixed(1);
+                const color = change.confidence_change > 0 ? '#ef4444' : '#10b981';
+                tableHtml += `<tr>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${change.class}</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${(change.orig_confidence * 100).toFixed(1)}%</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${(change.adv_confidence * 100).toFixed(1)}%</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb; color: ${color};">${changePercent}%</td>
+                </tr>`;
+            });
+
+            tableHtml += '</table>';
+            return tableHtml;
+        }
+
+        function generateClassChangeTable(changes) {
+            if (changes.length === 0) return '无类别变化';
+
+            let tableHtml = '<table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">';
+            tableHtml += '<tr style="background: #f3f4f6;"><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">原始类别</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">误检为</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">置信度</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">IOU</th></tr>';
+
+            changes.forEach(change => {
+                tableHtml += `<tr>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${change.from_class}</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb; color: #ef4444;">${change.to_class}</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${(change.confidence_adv * 100).toFixed(1)}%</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${change.iou.toFixed(2)}</td>
+                </tr>`;
+            });
+
+            tableHtml += '</table>';
+            return tableHtml;
+        }
+
+        function generatePositionTable(changes) {
+            if (changes.length === 0) return '无位置变化';
+
+            let tableHtml = '<table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">';
+            tableHtml += '<tr style="background: #f3f4f6;"><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">类别</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">位置偏移(px)</th><th style="padding: 0.5rem; border: 1px solid #e5e7eb;">IOU</th></tr>';
+
+            changes.forEach(change => {
+                const color = change.position_change > 50 ? '#ef4444' : change.position_change > 20 ? '#f59e0b' : '#10b981';
+                tableHtml += `<tr>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${change.class}</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb; color: ${color};">${change.position_change.toFixed(1)}</td>
+                    <td style="padding: 0.5rem; border: 1px solid #e5e7eb;">${change.iou.toFixed(2)}</td>
+                </tr>`;
+            });
+
+            tableHtml += '</table>';
+            return tableHtml;
+        }
+
+        function generateVisualizationTips(data) {
+            const comp = data.comparison;
+            let tips = [];
+
+            if (comp.objects_lost > 0) {
+                tips.push(`⚠️ ${comp.objects_lost}个目标在对抗样本中未被检测到，说明攻击有效`);
+            }
+
+            if (comp.objects_added > 0) {
+                tips.push(`🔍 检测器在对抗样本中产生了${comp.objects_added}个虚假检测`);
+            }
+
+            const avgConfChange = comp.avg_confidence_change || 0;
+            if (avgConfChange < -0.1) {
+                tips.push(`📉 平均置信度下降${Math.abs(avgConfChange * 100).toFixed(1)}%，攻击显著影响了检测置信度`);
+            } else if (avgConfChange > 0.1) {
+                tips.push(`📈 平均置信度上升${(avgConfChange * 100).toFixed(1)}%，可能是误检增加`);
+            }
+
+            if (tips.length > 0) {
+                return `
+                <div style="margin-top: 1.5rem; padding: 1rem; background: #fffbeb; border: 1px solid #fbbf24; border-radius: 0.5rem;">
+                    <h4 style="color: #92400e; margin-bottom: 0.5rem;"><i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>分析提示</h4>
+                    <ul style="margin: 0; padding-left: 1.5rem; color: #92400e;">
+                        ${tips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
+                `;
+            }
+
+            return '';
+        }
+
+        function showError(message) {
+            const container = document.getElementById('detection-results');
+            container.innerHTML = `
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    ${message}
+                </div>
+            `;
+            container.style.display = 'block';
+        }
     </script>
 </body>
 </html>

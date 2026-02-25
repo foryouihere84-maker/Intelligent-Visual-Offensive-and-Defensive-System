@@ -1,5 +1,16 @@
-"# IDE" 
-".idea/" 
-"" 
-"# Large model files" 
-"models/detection/*.pt" 
+# IDE
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large model files
+models/detection/*.pt
+
+# Static uploads and results (这些是生成的图片，不需要版本控制)
+static/uploads/
+static/results/
+
+# Optional: if you don't want to include the subdirectory with its own git history
+official_adversarial_implementations/
