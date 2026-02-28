@@ -1,0 +1,4 @@
+使用目标检测功能的时候需要引入yolov8模型，模型放置位置，flaskProject/models/detection/yolov8m.pt
+一次可放置多个模型，项目会自动检测并使用
+
+系统内置伪装对抗的自研算法，如需要使用官方的advcam算法和shadowAttack算法，则需要创建新沙箱并下载官方模型然后集成
