@@ -50,5 +50,49 @@
       "model_name": "yolov8l",
       "detection_count": 5
     }
+  },
+  {
+    "id": "1772633895464343",
+    "operation_type": "detection",
+    "original_image": "000000000009.jpg",
+    "result_image": "result_000000000009.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-04T22:18:15.464349",
+    "params": {
+      "model_name": "yolov8l",
+      "detection_count": 5
+    }
+  },
+  {
+    "id": "1772633963345611",
+    "operation_type": "adversarial",
+    "original_image": "000000000025.jpg",
+    "result_image": "official_shadow_000000000025.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-04T22:19:23.345620",
+    "params": {
+      "attack_type": "official_shadow",
+      "intensity": 0.5,
+      "style_type": "natural",
+      "use_patch": false,
+      "patch_type": null,
+      "model_name": "mobilenet_v2-b0353104"
+    }
+  },
+  {
+    "id": "1772634030964730",
+    "operation_type": "adversarial",
+    "original_image": "000000000036.jpg",
+    "result_image": "official_shadow_000000000036.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-04T22:20:30.964738",
+    "params": {
+      "attack_type": "official_shadow",
+      "intensity": 0.28,
+      "style_type": "natural",
+      "use_patch": false,
+      "patch_type": null,
+      "model_name": "mobilenet_v2-b0353104"
+    }
   }
 ]
