@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "id": "1772433315032075",
+    "operation_type": "detection",
+    "original_image": "000000000025.jpg",
+    "result_image": "result_000000000025.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-02T14:35:15.032082",
+    "params": {
+      "model_name": "yolov8l",
+      "detection_count": 2
+    }
+  },
+  {
+    "id": "1772433331606971",
+    "operation_type": "detection",
+    "original_image": "000000000025.jpg",
+    "result_image": "result_000000000025.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-02T14:35:31.606978",
+    "params": {
+      "model_name": "yolov8x",
+      "detection_count": 2
+    }
+  },
+  {
+    "id": "1772433357167048",
+    "operation_type": "adversarial",
+    "original_image": "000000000025.jpg",
+    "result_image": "adv_shadow_000000000025.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-02T14:35:57.167055",
+    "params": {
+      "attack_type": "shadow",
+      "intensity": 0.1,
+      "style_type": "natural",
+      "use_patch": false,
+      "patch_type": null,
+      "model_name": "mobilenet_v2-b0353104"
+    }
+  },
+  {
+    "id": "1772538366269598",
+    "operation_type": "detection",
+    "original_image": "000000000009.jpg",
+    "result_image": "result_000000000009.jpg",
+    "additional_images": [],
+    "timestamp": "2026-03-03T19:46:06.269605",
+    "params": {
+      "model_name": "yolov8l",
+      "detection_count": 5
+    }
+  }
+]
